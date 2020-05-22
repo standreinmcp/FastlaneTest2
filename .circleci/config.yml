@@ -10,7 +10,10 @@ jobs:
       - node/with-cache:
           steps:
             - run: yarn
-            - run: cd ios && fastlane scan
+            - run: gem install bundler
+            - run: bundle install
+            - run: bundle update fastlane
+            - run: cd ios && bundle exec fastlane scan
 workflows:
     build-and-test:
       jobs:
