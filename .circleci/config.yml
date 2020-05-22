@@ -12,9 +12,6 @@ jobs:
             - run: yarn
             - run: 
               commad: cd ios && fastlane scan
-              environment: 
-                SCAN_DEVICE: iPhone 9
-                SCAN_SCHEME: fastlaneTest2
 workflows:
     build-and-test:
       jobs:
