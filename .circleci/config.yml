@@ -1,21 +1,14 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
+  
 jobs:
   build-and-test:
     macos:
       xcode: "11.3"
-    executor:
-      name: node/default
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: yarn
-            - run: gem install bundler
-            - run: bundle install
-            - run: bundle update fastlane
-            - run: cd ios && bundle exec fastlane scan
+      - run: cd ios && bundle exec fastlane scan
 workflows:
     build-and-test:
       jobs:
