@@ -1,11 +1,12 @@
 version: 2.1
+
 jobs:
   build-and-test:
     macos:
       xcode: "11.3"
     steps:
       - checkout
-      - run: cd ios && bundle exec fastlane scan
+      - run: cd ios && fastlane scan
 workflows:
     build-and-test:
       jobs:
