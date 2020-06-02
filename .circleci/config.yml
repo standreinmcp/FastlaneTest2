@@ -1,6 +1,7 @@
 version: 2.1
 
 steps:
+  build-and-test:
       - checkout
       - run:
           name: Install CocoaPods
@@ -11,6 +12,7 @@ steps:
           command: fastlane scan
           environment:
             SCAN_DEVICE: iPhone 8
+            SCAN_SCHEME: WebTests
 
       - store_test_results:
           path: output/scan
