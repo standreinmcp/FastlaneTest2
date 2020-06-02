@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-and-test:
     macos:
-      xcode: "11.1"
+      xcode: "10.3"
     steps:
       - checkout
       - run: cd ios && fastlane scan
