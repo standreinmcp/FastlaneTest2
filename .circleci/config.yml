@@ -1,7 +1,10 @@
 version: 2.1
 
-steps:
+jobs:
   build-and-test:
+    macos:
+      xcode: 11.3.0
+    steps:
       - checkout
       - run:
           name: Install CocoaPods
