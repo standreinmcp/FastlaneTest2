@@ -6,7 +6,10 @@ jobs:
       xcode: 11.3.0
     steps:
       - checkout
-      - run: cd ios && fastlane scan
+      - run: cd ios
+      - run: pod install
+      - run: fastlane scan
+      
 workflows:
     build-and-test:
       jobs:
